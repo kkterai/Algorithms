@@ -1,0 +1,35 @@
+A dynamic, "sequential access" data structure
+Each element is a separate object
+
+When to use it?
+- Any application that has to deal with an unknown number of objects.
+
+
+Advantages
+- Unlike an array, NOT a contiguous space in memory. It can be stored in multiple locations, removing storage limitations.
+- Linked lists’ biggest advantage over arrays in other languages is their ability to insert / remove list elements without reallocating or reorganization of the entire data structure. Arrays have indices, so deleting a value at index 0 for example requires every single item to be reindexed.
+
+
+Disadvantages
+- More memory intensive - four(4) extra bytes on a 32-bit CPU to store a reference to the next node.
+- Unlike arrays, does not allow direct access to individual elements (i.e. In a singly linked list, if you want to access a particular item, then you have to start at the head and follow references until you get to it).
+
+
+Today's problems:
+
+1. Describe how you would delete a node from a singly linked list.
+2. Reverse a singly linked list. Bonus: What would this look like in a doubly linked list?
+3. Find the kth to the last element of a singly linked list.
+
+
+
+
+
+
+
+References:
+- Wikipedia: https://en.wikipedia.org/wiki/Linked_list
+- Harvard CS50 - Linked Lists: https://www.youtube.com/watch?v=ZoG2hOIoTnA
+- Big O Cheatsheet: http://bigocheatsheet.com/
+- Stack Overflow: Reversal w/o recursion - http://stackoverflow.com/questions/34443612/how-to-reverse-a-linked-list-in-ruby
+- The Learning Point: Basic Data Structures - Linked List: http://www.thelearningpoint.net/computer-science/basic-data-structures-in-ruby---linked-list---a-simple-singly-linked-list
