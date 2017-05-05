@@ -59,7 +59,7 @@ class LinkedList
     temp
   end
 
-  #Utility function to print the linked list
+  #Utility function to print the original linked list
   def return_list
     list = []
     current_node = @head
