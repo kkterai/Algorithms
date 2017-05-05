@@ -39,9 +39,27 @@ class LinkedList
       #traverse to next node
       current = temp
     end
-    self
+    #Separate the original and copied linked lists
+    current = @head
+    copy = current.next_node
+
+    temp = copy
+
+    while current && copy
+      if copy.next_node == nil
+        current.next_node = nil
+        break
+      else
+        current.next_node = current.next_node.next_node
+        copy.next_node = copy.next_node.next_node
+        current = current.next_node
+        copy = copy.next_node
+      end
+    end
+    temp
   end
 
+  #Utility function to print the linked list
   def return_list
     list = []
     current_node = @head
@@ -60,7 +78,7 @@ class LinkedList
     return list
   end
 
-
+  #Generate singly linked list with random pointer
    l = LinkedList.new('1')
    l.add_last('2')
    l.add_last('3')
