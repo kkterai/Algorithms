@@ -40,25 +40,25 @@ class LinkedList
     # 1. count nodes
     current = @head
     count = count_nodes
-    if count.odd?
-    # 2.a if odd
-      (count/2).times do
-        current = current.next_node
-      end
-      @head = current
-    else
-    # 2.b.if even,
-      (count/2-1).times do
-        current = current.next_node
-      end
-      @head = current
+
+    (count/2).times do
+      #build from bottom up until midpoint
+      current = current.next_node
     end
+    head_node = current
+
+    while current.next_node != nil
+      #build from top down
+      current = current.next_node
+    end
+
+
 
   end
 
 
   #Utility function to print the original linked list
-  def return_list
+  def return_bst
     list = []
     current_node = @head
 
@@ -66,9 +66,9 @@ class LinkedList
       node = current_node
       case node
       when @head
-        node = ["HEAD - value: #{current_node.value}, next: #{current_node.next_node}, random: #{current_node.random.value}"]
+        node = ["HEAD - value: #{current_node.value}, next: #{current_node.next_node}, parent: #{current_node.parent.value}, child_1: #{current_node.child_1.value},child_2: #{current_node.child_2.value}"]
       else
-        node = ["NODE - value: #{current_node.value}, next: #{current_node.next_node}, random: #{current_node.random.value}"]
+        node = ["NODE - value: #{current_node.value}, next: #{current_node.next_node}, parent: #{current_node.parent.value}, child_1: #{current_node.child_1.value},child_2: #{current_node.child_2.value}"]
       end
       list << node
       current_node = current_node.next_node
