@@ -28,6 +28,22 @@ class LinkedList
     current.next_node.previous = current
   end
 
+  def add_first(value)
+    current = @head
+    new_node = Node.new(value)
+    current.previous = new_node
+    #if @head == @tail
+    if current.next_node == nil
+      new_node.next_node = current
+      @tail = current
+      @head = new_node
+    else
+      binding.pry
+      new_node.next_node = current
+      @head = new_node
+    end
+  end
+  binding.pry
   def count_nodes
     current = @head
     counter = 1
