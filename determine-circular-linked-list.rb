@@ -49,11 +49,4 @@ class LinkedList
     end
   end
 
-  l = LinkedList.new('m')
-  l.add_last('a')
-  l.add_last('d')
-  l.add_last('d')
-  l.add_last('a')
-  l.add_last('m')
-  binding.pry
 end
