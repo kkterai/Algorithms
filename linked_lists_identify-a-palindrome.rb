@@ -38,7 +38,6 @@ class LinkedList
       @tail = current
       @head = new_node
     else
-
       new_node.next_node = current
       @head = new_node
     end
