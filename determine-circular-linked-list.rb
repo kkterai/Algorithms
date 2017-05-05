@@ -16,8 +16,8 @@ class LinkedList
   attr_accessor :head
 
   def initialize(value)
-    @node = Node.new(value)
-    @head = @node
+    @head = Node.new(value)
+
   end
 
   def add_last(value)
