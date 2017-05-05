@@ -11,7 +11,7 @@ class Node
 end
 
 class LinkedList
-  attr_accessor :node, :head, :random
+  attr_accessor :head, :random
 
   def initialize(value)
     @node = Node.new(value)

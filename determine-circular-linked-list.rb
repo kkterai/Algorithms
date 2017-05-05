@@ -13,7 +13,7 @@ class Node
 end
 
 class LinkedList
-  attr_accessor :node, :head
+  attr_accessor :head
 
   def initialize(value)
     @node = Node.new(value)

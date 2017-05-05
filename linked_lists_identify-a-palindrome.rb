@@ -13,7 +13,7 @@ class Node
 end
 
 class LinkedList
-  attr_accessor :node, :head, :tail, :mid_1, :mid_2 #Two pointers (mid_1 and mid_2) needed to go in opposite directions.
+  attr_accessor :head, :tail, :mid_1, :mid_2 #Two pointers (mid_1 and mid_2) needed to go in opposite directions.
 
   def initialize(value)
     @node = Node.new(value)
