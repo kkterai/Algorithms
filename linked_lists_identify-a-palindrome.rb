@@ -38,12 +38,12 @@ class LinkedList
       @tail = current
       @head = new_node
     else
-      binding.pry
+
       new_node.next_node = current
       @head = new_node
     end
   end
-  binding.pry
+
   def count_nodes
     current = @head
     counter = 1
