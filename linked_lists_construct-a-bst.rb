@@ -70,6 +70,19 @@ class LinkedList
   end
 end
 
+def start_bst(linkedlist)
+  ll = linkedlist
+
+  start = ll.head
+  mid = ll.mid_node
+  last = ll.last_node
+
+  root_node = TreeNode.new(mid.value)
+  bst = Bst.new(root_node)
+  # def make_bst(start,mid,last)
+  #
+
+end
 
 l = LinkedList.new('1')
 l.add_last('2')
