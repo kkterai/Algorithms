@@ -68,20 +68,78 @@ class LinkedList
     end
    current
   end
+
+ #Methods below - 'count', 'find_mid', and 'find_last') called w/in 'make_bst' method.
+
+   def count(start,last)
+     current = start
+     counter = 1
+     until current == last
+       current = current.next_node
+       counter += 1
+     end
+     counter
+   end
+
+   def find_mid(start,last)
+     current = start
+     count = count(start,last)
+     (count/2).times do
+       current = current.next_node
+     end
+    current
+   end
+
+   def find_last(start,last)
+     current = start
+     count = count(start,last)
+     (count-1).times do
+       current = current.next_node
+     end
+    current
+   end
 end
 
 def start_bst(linkedlist)
+  #linked list
   ll = linkedlist
-
   start = ll.head
-  mid = ll.mid_node
+  mid = mid_node
   last = ll.last_node
+  node_count = ll.count_nodes
 
+  #binary search tree
   root_node = TreeNode.new(mid.value)
   bst = Bst.new(root_node)
-  # def make_bst(start,mid,last)
-  #
+  depth = Math.log2(node_count)
+  binding.pry
 
+  # def make_bst(root, start, last)
+
+  # So basically, I must do in-order traversal: l,root,r
+  # 1) Count ll nodes
+  # 2) Determine number of levels (base 2 log(n))
+  # Algorithm
+  # 3) excluding root, split count in half
+  # 4) In order traversal: 
+
+  #  if start.value > last.value  #Base case
+  #    return null
+  # =elsif depth == 0
+  #    return root_node
+  #  else
+  # => if depth >= 1
+        if bst.root.r_child == nil
+            root.right = new Node(depth-1);
+            root.left = new Node(depth-1);
+
+          for (int i=0; i < depth; i++){
+              Node node = new Node(depth);
+              node.right = new Node(depth-1);
+              node.left = new Node(depth-1);
+          }
+  # => end
+  # return bst
 end
 
 l = LinkedList.new('1')

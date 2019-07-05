@@ -1,0 +1,70 @@
+class Node
+
+  attr_accessor :value, :next
+
+  def initialize(value)
+    @value = value
+  end
+end
+
+#Many of the methods below should be refactored to incorporate "tail" pointer.
+class LinkedList
+
+  attr_accessor :head
+
+  def initialize(head_node = nil)
+    @head = head_node
+  end
+
+  def insert_head(node)
+    if @head
+      @head = node
+    else
+      node.next = @head
+      @head = node
+    end
+  end
+
+  def insert_tail(node)
+    current_node = @head
+
+    while current_node.next != nil
+      current_node = current_node.next
+    end
+
+    current_node.next = node
+    return self
+  end
+
+  def search(value)
+    current_node = @head
+    while current_node != nil && current_node.value != value
+      current_node = current_node.next
+    end
+
+    return current_node
+  end
+
+  def delete_tail()
+    current_node = @head
+
+      while current_node.next != nil
+        current_node = current_node.next
+      end
+
+      current_node.next = nil
+  end
+
+  def reverse()
+    current_node = @head
+    return_list = LinkedList.new()
+    while @head.next != nil
+      while current_node.next !=nil
+        return_list = current_node.next
+      end
+      return_list.insert_tail(current_node)
+      self.delete_tail
+    end
+    return return_list
+  end
+end
